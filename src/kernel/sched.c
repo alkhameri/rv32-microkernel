@@ -1,6 +1,7 @@
 #include "sched.h"
 #include "thread.h"
 #include "logger.h"
+#include <stddef.h>
 
 #define SYSCALL_YIELD 0U
 

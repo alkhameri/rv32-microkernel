@@ -1,10 +1,10 @@
-CROSS ?= riscv32-unknown-elf-
+CROSS ?= riscv64-unknown-elf-
 CC := $(CROSS)gcc
 AS := $(CROSS)gcc
 OBJCOPY := $(CROSS)objcopy
 
 INCLUDES := -Iinclude
-CFLAGS := -march=rv32imac -mabi=ilp32 -Wall -Wextra -O2 -ffreestanding -nostdlib -nostartfiles $(INCLUDES)
+CFLAGS := -march=rv32imac_zicsr -mabi=ilp32 -Wall -Wextra -O2 -ffreestanding -nostdlib -nostartfiles $(INCLUDES)
 ASFLAGS := $(CFLAGS)
 LDFLAGS := -T linker.ld -nostdlib -nostartfiles -ffreestanding
 
@@ -26,7 +26,7 @@ kernel.elf: $(OBJ) linker.ld
 	$(AS) $(ASFLAGS) -c $< -o $@
 
 run: kernel.elf
-	qemu-system-riscv32 -machine virt -nographic -kernel $<
+	qemu-system-riscv32 -machine virt -bios none -nographic -kernel $<
 
 clean:
 	rm -f $(OBJ) kernel.elf

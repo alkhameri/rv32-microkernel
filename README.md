@@ -90,4 +90,4 @@ linker.ld                # Memory layout + symbols for allocators
 Makefile                 # Build/run/clean
 ```
 
-Feel free to extend any subsystem—each module is documented and compartmentalized for experimentation. Have fun hacking on RV32!
+Feel free to extend any subsystem, each module is documented and compartmentalized for experimentation. Have fun hacking on RV32!
