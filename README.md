@@ -1,4 +1,4 @@
-# RV32 Educational Microkernel
+# RV32 Microkernel
 
 This project is a minimal but functional RISC-V RV32 microkernel that boots in machine mode on QEMU’s `virt` platform. It demonstrates startup, trap handling, timer interrupts, a preemptive round-robin scheduler, kernel threads with dedicated stacks, Sv32 virtual memory, a bump-based physical memory allocator, synchronization primitives, and a timestamped UART logger. A tiny syscall interface (`ecall`-based yield) and semaphore-driven demo threads showcase cooperative and preemptive scheduling.
 
